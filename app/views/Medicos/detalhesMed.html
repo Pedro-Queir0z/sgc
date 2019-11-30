@@ -1,0 +1,25 @@
+#{extends 'mainMed.html' /}
+#{set title:'Detalhes' /}
+
+<div class="card mb-3">
+  	<div class="card-header">
+    	<i class="fa fa-envelope"></i> Detalhes do perfil</div>
+    	
+  	<div class="card-body">	
+		   #{if medico?.foto?.exists()}
+		   <br>
+		   <img alt="" width="120px" height="120px" src="@{Medicos.mostrarImagemPerfil(medico?.id)}">
+		   <br>
+		   <input type="checkbox" name="apagarImagem" > Apagar imagem?
+		   <br>
+		   #{/if}
+  		${medico.nome} - ${medico.sobrenome}<br>
+		${medico.email}<br>
+		${medico.cpf}<br>		
+		${email.mensagem}<br><br>		
+		<br>
+		<div class="">
+			<a class="btn btn-primary" href="#">editar perfil</a>
+        </div>        
+	</div>
+</div>

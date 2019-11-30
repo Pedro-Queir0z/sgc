@@ -1,0 +1,33 @@
+#{extends 'mainMed.html' /}
+#{set title:'Listagem de Usuários' /}
+
+<div class="card mb-3">
+ <div class="card-header">
+   <i class="fa fa-envelope"></i> Listagem de E-mails</div>
+ <div class="card-body">
+    
+     <table class="table dataTable" id="">
+       <thead>
+         <tr><th rowspan="1" colspan="1">Data</th>
+         <th rowspan="1" colspan="1">Para</th>
+         <th rowspan="1" colspan="1">Assunto</th>
+         <th rowspan="1" colspan="1">Detalhes</th>
+       </thead>
+       <tbody> 
+      
+	#{list items:emails, as:'email'}
+		<tr role="row">
+           <td>${email.dataEnvio.format('dd/MM/yyyy hh:mm:ss')}</td>
+           <td>${email.para}</td>
+           <td>${email.assunto}</td>
+           <td>
+           		<a class="btn btn-info" title='Detalhes' href="@{Contatos.detalhesMed(email.id)}"><i class="fa fa-eye"></i></a>
+           </td>
+         </tr>
+	#{/list}
+	</tbody>
+    </table>
+    <br>
+    <a class="btn btn-info" href="@{Contatos.formMed}">Enviar novo e-mail</a>
+  </div>
+</div>

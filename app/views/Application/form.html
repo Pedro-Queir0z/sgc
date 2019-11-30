@@ -1,0 +1,113 @@
+#{extends 'main4.html' /}
+
+#{set title:'Home' /}
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>#{get 'title' /}</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="@{'/public/sb/vendor/fontawesome-free/css/all.min.css'}" rel="stylesheet" type="text/css">
+
+  <!-- Page level plugin CSS-->
+  <link href="@{'/public/sb/vendor/datatables/dataTables.bootstrap4.css'}" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="@{'/public/sb/css/sb-admin.css'}" rel="stylesheet">
+	#{get 'moreStyles' /}
+</head>
+<body class="bg-dark">
+
+  <div class="container">
+  <br>
+   <br>
+    <div class="card mb-3">
+	  <div class="card-header">
+	    <i class="fa fa-fw fa-user"></i>Cadastro</div>
+	  <div class="card-body">
+
+				<form method="post" action="@{Application.salvar}">
+					
+					<input type="hidden" name="paciente.id" value="${paciente?.id}"
+						enctype="multipart/form-data"> <input type="file"
+						name="paciente.foto.id"> <br> #{if
+					paciente?.foto?.exists()} <br> <img alt="" width="120px"
+						height="120px"
+						src="@{Pacientes.mostrarImagemPerfil(paciente?.id)}"> <br>
+					<input type="checkbox" name="apagarImagem"> Apagar imagem?
+					<br> #{/if} <br>
+					
+				<div class="form-row">
+	              <div class="col-md-6">
+	                <div class="form-label-group">
+	                  <input type="text" name="paciente.nome" value="${paciente?.nome}" id="${paciente?.id}" class="form-control" required="required" autofocus="autofocus">
+	                  <label for="${paciente?.id}">Nome</label>
+	                </div>                
+	              </div>                      
+	              <div class="col-md-6">
+	                <div class="form-label-group">
+	                  <input type="text" name="paciente.sobrenome" value="${paciente?.sobrenome}" id="${paciente?.id}" class="form-control"  required="required">
+	                  <label for="${paciente?.id}">Sobrenome</label>
+	              	</div> 
+	              </div>
+              </div>
+              <br>
+              <!-- Area -->
+	          <div class="form-row">
+	              	<div class="col-md-6">
+		                <div class="form-label-group">
+		                  <input type="text" name="paciente.email" value="${paciente?.email}" id="${paciente?.id}" class="form-control"  required="required">
+		                  <label for="${paciente?.id}">Email</label>
+		              	</div> 
+	              	</div>
+	              	<div class="col-md-6">
+		                <div class="form-label-group">
+		                  <input type="text" name="paciente.cpf" value="${paciente?.cpf}" id="${paciente?.id}" class="form-control"  required="required">
+		                  <label for="${paciente?.id}">CPF</label>
+		              	</div> 
+	              	</div>              
+              </div>             
+                <br>
+                
+                <!-- Area -->
+                
+                <div class="form-row">
+	               	 <div class="col-md-6">
+		                <div class="form-label-group">
+		                
+		                  <select class="form-control" name="paciente.sexo.id" required="required"> 
+								<option value="">Sexo</option>
+								#{list items: sexo, as: 'sexo' }
+								<option  #{if paciente?.sexo.equals(sexo)}selected#{/if}>${sexo}</option>
+								#{/list}
+						  </select> 
+						  
+		                </div>
+		             </div>
+		             <div class="col-md-6">
+			            <div class="form-label-group">
+				           <input type="password" name="paciente.senha" value="${paciente?.senha}" id="${paciente?.id}" class="form-control"  required="required">
+				            <label for="${paciente?.id}">Senha</label>
+			           	</div>
+		            </div>
+         		</div>
+
+					<br> <input class="btn btn-primary btn-block" type="submit"
+						value="Cadastrar">
+				</form>
+				<div class="text-center">
+          
+        </div>
+      </div>
+    </div>
+ 	</div>
+ 	
+</body>
+
+

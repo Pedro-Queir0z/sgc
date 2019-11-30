@@ -1,0 +1,103 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+<head>
+ <meta charset="utf-8">
+</head>
+<div id="content-wrapper">
+
+      <div class="container-fluid">
+<!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a >Opções</a>
+          </li>
+          
+        </ol>
+
+      </div>
+      <!-- /.container-fluid -->
+
+  
+
+    </div>
+<!-- Icon Cards-->
+<center>
+        <div class="row">
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-primary o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-comments"></i>
+                </div>
+                <div class="mr-5">Agendar Consulta</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="@{Consultas.form}">
+                <span class="float-left">Detalhar</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-warning o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-list"></i>
+                </div>
+                <div class="mr-5">Lista de Consultas</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="@{Consultas.listar}">
+                <span class="float-left">Detalhar</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>          
+        </div>
+        </center>
+
+        <!-- Area Chart Example-->
+        
+
+        <!-- DataTables Example -->
+       <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Lista de consultas</div>
+          <div class="card-body">
+            <div class="table-responsive">             
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Código</th>
+                    <th>Detalhar</th>                  
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th>Name</th>
+                    <th>Código</th>
+                    <th>Detalhar</th>
+                   
+                  </tr>
+                </tfoot>
+                <tbody> 
+                #{list items: consultas, as: 'consulta'}               
+                  <tr>
+                    <td>${consulta.descricao}</td>
+                    <td>${consulta.id}</td>                   
+                    <td>
+           				<a class="btn btn-info" title='Detalhes' href="@{Consultas.listar}"><i class="fa fa-eye"></i></a>           				
+           			</td>                     
+                  </tr>   
+                    #{/list}                   
+                </tbody>
+              </table>                           
+               #{else}
+				<div class="btn btn-danger">nenhuma consulta cadastrada</div>
+			  #{/else}
+            </div>
+          </div>          

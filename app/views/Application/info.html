@@ -1,0 +1,209 @@
+
+
+<head>
+ 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>#{get 'title' /}</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="@{'/public/sb/vendor/fontawesome-free/css/all.min.css'}" rel="stylesheet" type="text/css">
+
+  <!-- Page level plugin CSS-->
+  <link href="@{'/public/sb/vendor/datatables/dataTables.bootstrap4.css'}" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="@{'/public/sb/css/sb-admin.css'}" rel="stylesheet">
+	#{get 'moreStyles' /}
+</head>
+
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <center><div class="navbar-brand mr-1" >Sobre o sistema</div></center>
+
+   
+			
+			
+					 <!-- Navbar Search -->
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+      <!-- <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div> -->
+    </form> 	
+    
+
+    <!-- Navbar -->
+    
+ </ul>
+      <ul class="navbar-nav ml-auto">
+      	<li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="@{Pacientes.pacHome}">
+            <i ></i>Voltar</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+        
+        
+        
+  </nav>        
+     
+    
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+      #{if flash.success}
+      <div class="verde">
+      ${flash.success}
+      </div>
+      #{/if}
+      #{if flash.erro}
+      <div class="vermelho">
+      ${flash.erro}
+      </div>
+      #{/if}
+      <input type="hidden"
+	  #{doLayout /}>
+      
+
+        
+
+      </div>
+      <!-- /.container-fluid -->
+
+<div id="content-wrapper">
+
+      <div class="container-fluid">
+<!-- Breadcrumbs-->
+       
+          
+        
+        </ol>
+         <ol class="breadcrumb">
+         
+         <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            
+            <p>
+            
+            As tecnologias têm avançado cada vez mais e com isso o número de usuários com smartphones e computadores acessando internet aumenta. Milhares de pessoas acessam sites e aplicativos todos os dias tudo está mudando e sendo atualizado, como podemos ver já existem contas bancárias online, cursos online, lojas online entre outros. De acordo com dados da União Internacional de Telecomunicações (UIT) , existem cerca de 122 milhões de usuários com acesso a Internet no Brasil (2019), isso é cerca de 50% da população. Pensando nisso abordar soluções que utilizem o amplo alcance das novas tecnologias proporcionará um atendimento melhor e mais rápido. 
+Existem muitos consultórios que ainda realizam cadastros no papel e não disponibilizam ferramentas úteis aos seus clientes para uma melhor visualização de seus horários de consultas marcadas, isso proporciona atrasos aos pacientes que ficam esperando por falta de organização e planejamento. Sendo assim, um site que disponibilizasse ferramentas como essas seria de grande utilidade aos pacientes e profissionais. Ele diminuiria o tempo gasto com o cadastro de clientes e tempo de espera, já que eles visualizarão melhor seus horários de consulta. 
+</p>
+<p>Além disso haveria um histórico para os clientes, onde o profissional escreveria sobre a consulta deles, o que proporcionará um melhor acompanhamento dos diagnósticos apresentados.
+Existem vários fatores para que o cliente saia insatisfeito das clínicas e de acordo entrevistas feitas (1992) com 156 pacientes, aproximadamente 8% dos pacientes e 22% dos profissionais estavam insatisfeitos com o tempo de espera que seria em média 41,8 minutos para pacientes e para profissionais 27 minutos. 11% dos pacientes e quase 60% dos profissionais estavam insatisfeitos com o agendamento de consultas. Tendo esses dados em vista é importante pensar em uma solução que diminua o tempo de espera dos clientes em consultórios.
+Este trabalho tem como objetivo geral propor, desenvolver um sistema online de gerenciamento de consultas, que facilite a gestão dos consultórios e diminua o tempo.de espera dos pacientes neles. E como objetivos específicos, criar um sistema usando linguagens de programação Java e html, verificar se o sistema atende aos requisitos necessários de um consultório, registrar histórico dos clientes, implementar o sistema em um consultórios interessado.
+
+
+             
+</p>
+          </li>        
+        </ol></ol>
+        
+        
+
+      </div>
+      <!-- /.container-fluid -->
+
+      <!-- Sticky Footer -->
+      
+
+    </div>
+<!-- Icon Cards-->
+       
+
+        <!-- Area Chart Example-->
+        
+
+        <!-- DataTables Example -->
+
+     
+
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="@{Application.index}">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
+	#{get 'moreStyles' /}
+	
+</body>
+
+</html>
+
+
+
+
+
+       
+          
+
+         
+        
+      
+      
+
+  
+
+
+  
+
+

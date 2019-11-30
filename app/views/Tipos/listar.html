@@ -1,0 +1,8 @@
+<h1>Listagem de Tipos</h1>
+
+<ul>
+	#{list items:tipos, as: 'tipo'}
+		<li><a href="@{Tipos.detalhes(tipo.id)}">${tipo.nome}</a> |  ${tipo.consultas.size()}</li>
+	#{/list}
+
+</ul>

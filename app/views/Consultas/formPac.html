@@ -1,0 +1,98 @@
+#{extends 'main2.html' /}
+#{set title:'Home' /}
+<!-- <head>
+ <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+</head>
+
+
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>#{set title:'Home' /}</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="@{'/public/sb/vendor/fontawesome-free/css/all.min.css'}" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template-->
+  <link href="@{'/public/sb/css/sb-admin.css'}" rel="stylesheet">
+
+</head>
+
+
+<body class="bg-white">
+
+  <div class="container">
+    
+    
+    <div class="card mb-3">
+	  <div class="card-header">
+	    <i class="fa fa-fw fa-bookmark"></i> Formulário de Consultas</div>
+	  <div class="card-body">
+	  
+   <!--    <div class="card-header">Formulário de Consultas</div> -->
+      <div class="card-body">
+      <form action="@{Consultas.salvarP}" method="post">
+        <input type="hidden" name="consulta.id" value="${consulta?.id}"><br>
+          <div class="form-group">
+           
+
+			    	<!-- Tipo de consulta -->      
+					<select class="form-control" name="consulta.tipo.id" required="required"> 
+						<option value="">Tipo de consulta</option>	
+						#{list items: tipos, as: 'tipo' }
+						<option  #{if consulta?.tipo.equals(tipo)}selected#{/if}>${tipo}</option>
+						#{/list}
+					</select><br>
+					
+					 
+					
+		        </div>
+				
+        	   
+              <div class="col-md-6">
+                  <label for="${consulta?.id}">Descrição</label>  
+                   <textarea required="required" value="${consulta?.descricao}" name="consulta.descricao" class="form-control #{ifError 'consulta.descricao'} is-invalid#{/ifError}" 
+			  			rows="5" id="${consulta?.id}">${flash['consulta.descricao']}</textarea>                                 
+                </div><br>
+                      
+			 
+				
+		
+			 
+	
+           	            
+            </div>
+              </div>
+              <input class="btn btn-primary btn-block" type="submit" value="Salvar">
+              </div>
+                
+              </div>
+              
+               <br>
+            
+        </form>
+        <div class="text-center">
+          
+        </div>
+      </div>
+      <!-- <center><a class="d-block small mt-3" href="@{Logins.form}">Página de login</a>
+          <a class="d-block small" href="forgot-password.html">Esqueceu senha?</a></center> -->
+    </div>
+    
+
+
+
+</body>
+
+

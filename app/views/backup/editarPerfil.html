@@ -1,0 +1,98 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+
+
+<!-- <form action="@{Pacientes.salvar}" method="post" >
+	         <input type="hidden" name="paciente.id" value="${paciente?.id}">
+	Nome:           <input type="text" name="paciente.nome" value="${paciente?.nome}"> <br>
+	Numero de cadastro: 	<input type="password" name="paciente.numSus" value="${paciente?.numSus}">
+	<br><input type="submit" value="Enviar">
+	
+</form> --> 
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>#{get 'title' /}</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="@{'/public/sb/vendor/fontawesome-free/css/all.min.css'}" rel="stylesheet" type="text/css">
+
+  <!-- Page level plugin CSS-->
+  <link href="@{'/public/sb/vendor/datatables/dataTables.bootstrap4.css'}" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="@{'/public/sb/css/sb-admin.css'}" rel="stylesheet">
+	#{get 'moreStyles' /}
+</head>
+<body class="bg-white">
+
+  <div class="container">
+  
+   
+    
+      <div class="card-header">Formulário de Pacientes</div>
+      <div class="card-body">
+        <form action="@{Pacientes.salvar}" method="post" enctype="multipart/form-data">
+         <input type="hidden" name="paciente.id" value="${paciente?.id}">
+         
+		   <input type="file" name="paciente.foto">
+		  		   
+		   <br>
+		   #{if paciente?.foto?.exists()}
+		   <br>		   
+		   <img alt="" width="120px" height="120px" src="@{Pacientes.mostrarImagemPerfil(paciente?.id)}">
+		   <br>
+		   <input type="checkbox" name="apagarImagem" > Apagar imagem?		
+		   <br>
+		   #{/if}
+		   <br>
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" name="paciente.nome" value="${paciente?.nome}" id="${paciente?.id}" class="form-control" required="required" autofocus="autofocus">
+                  <label for="${paciente?.id}">Nome</label>
+                </div>                
+              </div>          
+             
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" name="paciente.email" value="${paciente?.email}" id="${paciente?.id}" class="form-control"  required="required">
+                  <label for="${paciente?.id}">Email</label>
+              	</div> 
+              </div>
+              </div>
+             
+                <br>
+                <div class="form-row">
+               	 <div class="col-md-6">
+	                <div class="form-label-group">
+	                  <input type="text" name="paciente.numSus" value="${paciente?.numSus}" id="${paciente?.id}" class="form-control"  required="required">
+	                  <label for="${paciente?.id}">Código do Paciente</label>
+	                </div>
+	             </div>
+	                <div class="col-md-6">
+		                <div class="form-label-group">
+			              <input type="password" name="paciente.senha" value="${paciente?.senha}" id="${paciente?.id}" class="form-control"  required="required">
+			              <label for="${paciente?.id}">Senha</label>
+		            	</div>
+	            	</div>
+         		</div>
+               
+          
+             
+         <br>
+         
+          <input class="btn btn-primary btn-block" type="submit" value="Cadastrar">
+        </form>
+      </div>
+    </div>
+ 
+</body>
+
+

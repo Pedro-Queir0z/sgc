@@ -1,0 +1,8 @@
+<h1>Detalhes do tipo ${tipo.nome}</h1>
+
+<ul>
+#{list items:tipo.consultas, as: 'consulta'}
+	<li>${consulta.detalhes}</li>
+
+#{/list}
+</ul>

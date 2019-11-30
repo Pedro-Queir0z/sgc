@@ -1,0 +1,127 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<!--  <h1>Formulario de Medicos</h1>
+
+<form action="@{Medicos.salvar}" method="post">
+	<input type="hidden" name="medico.id" value="${medico?.id}"><br>
+	Nome:<input type="text" name="medico.nome" value="${medico?.nome}"> <br>
+	Codigo do Medico<input type="number" name="medico.codMed" value="${medico?.codMed}"> <br>
+	Formacao: <input type="text" name="medico.tipo" value="${medico?.tipo}"><br>
+	<input type="submit" value="Enviar">
+	
+	
+</form>-->
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>#{get 'title' /}</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="@{'/public/sb/vendor/fontawesome-free/css/all.min.css'}" rel="stylesheet" type="text/css">
+
+  <!-- Page level plugin CSS-->
+  <link href="@{'/public/sb/vendor/datatables/dataTables.bootstrap4.css'}" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="@{'/public/sb/css/sb-admin.css'}" rel="stylesheet">
+	#{get 'moreStyles' /}
+</head>
+
+<body class="bg-white">
+
+  <div class="container">
+    
+      <div class="card-header">Formulario de Médicos</div>
+      <div class="card-body">
+        <form action="@{Medicos.salvar}" method="post" enctype="multipart/form-data">
+        <div class="form-group" action="@{Medicos.salvar}">
+         <input type="hidden" name="medico.id" value="${medico?.id}">
+         
+		   <input type="file" name="medico.foto">
+		  		   
+		   <br>
+		   #{if medico?.foto?.exists()}
+		   <br>
+		   <img alt="" width="120px" height="120px" src="@{Medicos.mostrarImagemPerfil(medico?.id)}">
+		   <br>
+		   <input type="checkbox" name="apagarImagem" > Apagar imagem?
+		   <br>
+		   #{/if}
+		   
+          <br>
+          <!-- Area -->
+            <div class="form-row">
+	             <div class="col-md-6">
+	                <div class="form-label-group">
+	                  <input type="text" name="medico.nome" value="${medico?.nome}" id="${medico?.nome}" class="form-control" required="required" autofocus="autofocus">
+	                  <label for="${medico?.nome}">Nome</label>
+	                </div>
+	             </div>                                    
+	             <div class="col-md-6">
+	                <div class="form-label-group">
+	                  <input type="text" name="medico.sobrenome" value="${medico?.sobrenome}" id="${medico?.id}" class="form-control"  required="required">
+	                  <label for="${medico?.id}">Sobrenome</label>
+	             	</div>
+	            </div>
+            </div>
+            <br>
+             <!-- Area -->
+             <div class="form-row">
+				<div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" name="medico.email" value="${medico?.email}" id="${medico?.id}" class="form-control"  required="required">
+                  <label for="${medico?.id}">Email</label>
+                 </div> 
+             </div>           
+             <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" name="medico.cpf" value="${medico?.cpf}" id="${medico?.id}" class="form-control"  required="required">
+                  <label for="${medico?.id}">CPF</label>
+                 </div> 
+             </div>             
+			</div>                                                                       
+             <br>
+             <div class="form-row">
+             <select class="form-control" name="medico.sexo.id" required="required"> 
+						<option value="">Sexo</option>
+						#{list items: sexo, as: 'sexo' }
+						<option  #{if medico?.sexo.equals(sexo)}selected#{/if}>${sexo}</option>
+						#{/list}
+					</select> 
+             </div>
+             <br>
+             <!-- Area -->
+              <div class="form-row">
+	        		<div class="col-md-6">
+	                <div class="form-label-group">
+	                  <input type="text" name="medico.tipo" value="${medico?.tipo}" id="${medico?.id}" class="form-control"  required="required">
+	                  <label for="${medico?.id}">Especialidade</label>
+	        		</div>
+	        		</div>
+	        		
+	        		<div class="col-md-6">
+		                <div class="form-label-group">
+			              <input type="password" name="medico.senha" value="${medico?.senha}" id="${medico?.id}" class="form-control"  required="required">
+			              <label for="${medico?.id}">Senha</label>
+		            	</div>
+	            	</div>
+	            </div>
+	        </div>
+	        
+         <br>       
+          <input class="btn btn-primary btn-block" type="submit" value="Cadastrar">
+        </form>
+        <div class="text-center">
+          
+        </div>
+      </div>
+    </div>
+ 
+</body>

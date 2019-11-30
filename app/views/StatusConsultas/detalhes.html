@@ -1,0 +1,8 @@
+<h1>Detalhes do Status da Consulta ${stac.status}</h1>
+
+<ul>
+#{list items:stac.consultas, as: 'consulta'}
+	<li>${consulta.detalhes}</li>
+
+#{/list}
+</ul>

@@ -1,0 +1,43 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>#{set title:'Home' /}</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="@{'/public/sb/vendor/fontawesome-free/css/all.min.css'}" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template-->
+  <link href="@{'/public/sb/css/sb-admin.css'}" rel="stylesheet">
+
+</head>
+
+Cadastrar:<br>
+
+<div class="container-fluid">
+<!-- Breadcrumbs-->
+
+          <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="@{Funcionarios.form}">Funcionário</a>
+          </li>
+        </ol>
+     
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="@{Pacientes.form}">Paciente</a>
+          </li>
+        </ol>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a href="@{Medicos.form}">Médico</a>
+          </li>
+        </ol>
+        

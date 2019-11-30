@@ -1,0 +1,8 @@
+<h1>Listagem de status</h1>
+
+<ul>
+	#{list items:stac, as: 'sc'}
+		<li><a href="@{StatusConsultas.detalhes(sc.id)}">${sc.status}</a> |  ${sc.consultas.size()}</li>
+	#{/list}
+
+</ul>
